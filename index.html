@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var random = Math.floor((Math.random() * 3) + 1);
+        var computerChoise = computerSelect(random)
+        function computerSelect(random) {
+            if (random == 1) {
+                return computerChoise = "scissors";
+            }
+            else if (random == 2) {
+                return computerChoise = "rock";
+            }
+            else {
+                return computerChoise = "paper";
+            }
+
+        }
+        var playerSelect = prompt("enter rock, paper or scissors")
+
+        var result = stonePaperScissors(computerChoise, playerSelect)
+        function stonePaperScissors(computerChoise, playerSelect) {
+            if (playerSelect == "rock") {
+                if (computerChoise == "rock") {
+                    return result = "its an tie!"
+                }
+                else if (computerChoise == "paper") {
+                    return result = "You won!"
+                }
+                else {
+                    return result = "You lost!"
+                }
+
+            }
+            if (playerSelect == "paper") {
+                if (computerChoise == "rock") {
+                    return result = "You won!"
+                }
+                else if (computerChoise == "paper") {
+                    return result = "Its an tie"
+                }
+                else {
+                    return result = "You lost!"
+                }
+            }
+            if (playerSelect == "scissors") {
+                if (computerChoise == "rock") {
+                    return result = "You lost!"
+                }
+                else if (computerChoise == "paper") {
+                    return result = "You won!"
+                }
+                else {
+                    return result = "Its an tie!"
+                }
+            }
+
+        }
+        console.log(result + " Your Choice:" + playerSelect +" Computers choise:"+ computerChoise)
+    </script>
+</body>
+</html>
