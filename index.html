@@ -11,7 +11,9 @@
         var pWin = 0
         var cWin = 0
         var tie = 0
+        // Do While loop to make the program run 5 times before showing results
         do {
+            // randomizer for the computers choise
             var random = Math.floor((Math.random() * 3) + 1);
             var computerChoise = computerSelect(random)
             function computerSelect(random) {
@@ -26,9 +28,12 @@
                 }
 
             }
+            // the player input
             var playerSelect = prompt("enter rock, paper or scissors").toLowerCase();
 
+            // the game itself
             var result = stonePaperScissors(computerChoise, playerSelect)
+
             function stonePaperScissors(computerChoise, playerSelect) {
                     if (playerSelect == "rock") {
                         if (computerChoise == "rock") {
