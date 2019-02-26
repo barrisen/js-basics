@@ -7,61 +7,78 @@
 </head>
 <body>
     <script>
-        var random = Math.floor((Math.random() * 3) + 1);
-        var computerChoise = computerSelect(random)
-        function computerSelect(random) {
-            if (random == 1) {
-                return computerChoise = "scissors";
-            }
-            else if (random == 2) {
-                return computerChoise = "rock";
-            }
-            else {
-                return computerChoise = "paper";
-            }
-
-        }
-        var playerSelect = prompt("enter rock, paper or scissors").toLowerCase();
-
-        var result = stonePaperScissors(computerChoise, playerSelect)
-        function stonePaperScissors(computerChoise, playerSelect) {
-            if (playerSelect == "rock") {
-                if (computerChoise == "rock") {
-                    return result = "its an tie!"
+        var i = 0
+        var pWin = 0
+        var cWin = 0
+        var tie = 0
+        do {
+            var random = Math.floor((Math.random() * 3) + 1);
+            var computerChoise = computerSelect(random)
+            function computerSelect(random) {
+                if (random == 1) {
+                    return computerChoise = "scissors";
                 }
-                else if (computerChoise == "paper") {
-                    return result = "You won!"
+                else if (random == 2) {
+                    return computerChoise = "rock";
                 }
                 else {
-                    return result = "You lost!"
+                    return computerChoise = "paper";
                 }
 
             }
-            if (playerSelect == "paper") {
-                if (computerChoise == "rock") {
-                    return result = "You won!"
-                }
-                else if (computerChoise == "paper") {
-                    return result = "Its an tie"
-                }
-                else {
-                    return result = "You lost!"
-                }
-            }
-            if (playerSelect == "scissors") {
-                if (computerChoise == "rock") {
-                    return result = "You lost!"
-                }
-                else if (computerChoise == "paper") {
-                    return result = "You won!"
-                }
-                else {
-                    return result = "Its an tie!"
-                }
-            }
+            var playerSelect = prompt("enter rock, paper or scissors").toLowerCase();
 
-        }
-        console.log(result + " Your Choice:" + playerSelect +" Computers choise:"+ computerChoise)
+            var result = stonePaperScissors(computerChoise, playerSelect)
+            function stonePaperScissors(computerChoise, playerSelect) {
+                    if (playerSelect == "rock") {
+                        if (computerChoise == "rock") {
+                            i++
+                            return result = "its an tie!", tie++;
+                        }
+                        else if (computerChoise == "paper") {
+                            i++
+                            return result = "You won!", pWin++;
+                        }
+                        else {
+                            i++
+                            return result = "You lost!", cWin++
+                        }
+
+                    }
+                    if (playerSelect == "paper") {
+                        if (computerChoise == "rock") {
+                            i++
+                            return result = "You won!", pWin++;
+                        }
+                        else if (computerChoise == "paper") {
+                            i++
+                            return result = "Its an tie", tie++;
+                        }
+                        else {
+                            i++
+                            return result = "You lost!", cWin++
+                        }
+
+                    }
+                    if (playerSelect == "scissors") {
+                        if (computerChoise == "rock") {
+                            i++
+                            return result = "You lost!", cWin++
+                        }
+                        else if (computerChoise == "paper") {
+                            i++
+                            return result = "You won!", pWin++;
+                        }
+                        else {
+                            i++
+                            return result = "Its an tie!", tie++;
+                        }
+                    }
+            
+                }
+                console.log("Players choise: " + playerSelect + "  Computers choise: " + computerChoise);
+            } while (i < 5);
+        console.log("Number of ties: " + tie + " Number of wins: " + pWin + " Number of losses: " + cWin)
     </script>
 </body>
 </html>
